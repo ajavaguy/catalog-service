@@ -6,3 +6,9 @@ server:
     threads:
       max: 50
       min-spare: 5
+
+hibernate:
+
+
+polar:
+  greeting: Welcome to the local book catalog!
