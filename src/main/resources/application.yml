@@ -28,7 +28,7 @@ spring:
       # Timeout on waiting to read configuration data from the config server (ms)
       request-read-timeout: 5000
       # Makes a failure to connect to the config server fatal
-      fail-fast: true
+      fail-fast: false
       retry:
         max-attempts: 6
         initial-interval: 1000
