@@ -1,8 +1,12 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.4.1'
-	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.springframework.boot' version '2.7.18'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
+
+group = 'com.polarbookshop'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
 
 configurations {
 	compileOnly {
@@ -10,26 +14,23 @@ configurations {
 	}
 }
 
+repositories {
+	mavenCentral()
+}
+
 ext {
-	set('springCloudVersion', "2024.0.0")
-	set('testcontainersVersion', "1.17.3")
+	set('springCloudVersion', "2021.0.9")
+	set('testcontainersVersion', "1.19.8")
 }
 
 bootRun {
 	systemProperty 'spring.profiles.active', 'testdata'
 }
 
-group = 'com.polarbookshop'
-version = '0.0.1-SNAPSHOT'
-
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
-}
-
-repositories {
-	mavenCentral()
 }
 
 dependencies {
@@ -39,7 +40,7 @@ dependencies {
 	implementation 'org.springframework.retry:spring-retry'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'org.flywaydb:flyway-core:9.5.1'
+	implementation 'org.flywaydb:flyway-core'
 	runtimeOnly 'org.postgresql:postgresql'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
