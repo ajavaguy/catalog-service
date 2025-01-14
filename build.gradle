@@ -14,6 +14,19 @@ configurations {
 	}
 }
 
+bootBuildImage {
+	imageName = "${project.name}"
+	environment = ["BP_JVM_VERSION" : "17.*"]
+
+	docker {
+		publishRegistry {
+			username = "ajavaguy"
+			password = "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"
+			url = "ghcr.io"
+		}
+	}
+}
+
 repositories {
 	mavenCentral()
 }
