@@ -20,9 +20,9 @@ bootBuildImage {
 
 	docker {
 		publishRegistry {
-			username = "ajavaguy"
-			password = "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"
-			url = "ghcr.io"
+			username = project.findProperty("registryUsername")
+			password = project.findProperty("registryToken")
+			url = project.findProperty("registryUrl")
 		}
 	}
 }
